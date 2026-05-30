@@ -37,6 +37,23 @@ Version 3 focuses on improving hardware reliability through proper button deboun
 
 ---
 
+## Resource Utilization
+
+The following results were obtained from Intel Quartus Prime Lite after synthesizing the design for the Intel MAX10 DE10-Lite FPGA (10M50DAF484C7G).
+
+| Resource | Usage |
+|-----------|--------|
+| Logic Elements (LEs) | 209 / 49,760 (< 1%) |
+| Registers | 89 |
+| I/O Pins | 31 / 360 (9%) |
+| Memory Bits | 0 / 1,677,312 (0%) |
+| Embedded 9-bit Multipliers | 4 / 288 (1%) |
+| PLLs | 0 / 4 (0%) |
+
+### Design Notes
+
+The design uses less than 1% of the available logic resources on the MAX10 FPGA, leaving significant room for future expansion. Planned V4 features such as a solenoid driver, PWM-based power management, display interfaces, and additional security features can be added without significant resource constraints.
+
 ## FSM States
 
 | State   | Description                                   |
