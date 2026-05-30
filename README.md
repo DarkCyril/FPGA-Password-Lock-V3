@@ -1,5 +1,3 @@
-# FPGA-Password-Lock-V3
-
 # FPGA Password Lock System V3
 
 ## Overview
