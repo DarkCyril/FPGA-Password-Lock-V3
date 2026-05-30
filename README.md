@@ -166,6 +166,26 @@ FPGA-Password-Lock-V3/
 
 ---
 
+## Lockout Timing Verification
+
+The lockout timer increases the delay by 5 seconds for each failed password attempt. The delay begins at 5 seconds and increases up to a maximum of 35 seconds after 7 failed attempts.
+
+Timing was verified on hardware using the DE10-Lite board and a stopwatch.
+
+| Failed Attempts | Lockout Delay |
+|---|---|
+| 1 | 5 seconds |
+| 2 | 10 seconds |
+| 3 | 15 seconds |
+| 4 | 20 seconds |
+| 5 | 25 seconds |
+| 6 | 30 seconds |
+| 7 | 35 seconds |
+
+### Verification Note
+
+The timing values were measured manually using a stopwatch, so small human reaction-time error is expected. However, the observed behavior confirmed that the lockout delay increased in 5-second increments and saturated at 35 seconds.
+
 ## Version Improvements
 
 ### V1
