@@ -1,0 +1,24 @@
+## FSM Diagram
+
+```mermaid
+stateDiagram-v2
+    [*] --> S_IDLE
+
+    S_IDLE --> S_SET: mode = 1 and enter
+    S_IDLE --> S_INPUT: mode = 0 and enter
+    S_IDLE --> S_IDLE: no enter
+
+    S_SET --> S_IDLE: enter / save new PIN
+    S_SET --> S_SET: wait
+
+    S_INPUT --> S_CHK: enter / capture PIN
+    S_INPUT --> S_INPUT: wait
+
+    S_CHK --> S_UNBLK: saved_pin == enter_pin
+    S_CHK --> S_BLK: saved_pin != enter_pin
+
+    S_BLK --> S_IDLE: ticks
+    S_BLK --> S_BLK: wait
+
+    S_UNBLK --> S_IDLE: enter
+    S_UNBLK --> S_UNBLK: wait
